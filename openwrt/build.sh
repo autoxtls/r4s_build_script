@@ -1,3 +1,4 @@
+
 #!/bin/bash -e
 export RED_COLOR='\e[1;31m'
 export GREEN_COLOR='\e[1;32m'
@@ -169,6 +170,17 @@ git clone https://$github/openwrt/routing master/routing --depth=1
 # openwrt-23.05
 [ "$1" = "rc2" ] && git clone https://$github/openwrt/openwrt -b openwrt-23.05 master/openwrt-23.05 --depth=1
 
+# openclash master
+git clone https://github.com/vernesong/OpenClash master/OpenClash --depth=1
+if [ -d "master/OpenClash" ]; then
+    sed -i 's/("OpenClash"), 50/("OpenClash"), 20/' master/OpenClash/luci-app-openclash/luasrc/controller/openclash.lua
+    mkdir -p openwrt/package/feeds/luci
+    cp -r master/OpenClash/luci-app-openclash openwrt/package/feeds/luci/luci-app-openclash
+else
+    echo -e "Failed to download openclash"
+    exit 1
+fi
+
 # immortalwrt master
 git clone https://$github/immortalwrt/packages master/immortalwrt_packages --depth=1
 [ "$(whoami)" = "runner" ] && endgroup
@@ -252,6 +264,21 @@ fi
 
 rm -f 0*-*.sh
 rm -rf ../master
+
+# xfrpc zh_hans
+mkdir feeds/luci/applications/luci-app-xfrpc/po/zh_Hans
+curl -sO https://raw.githubusercontent.com/pmkol/openwrt_build_script/x86_64/openwrt/zhcn/xfrpc.po
+chmod 0664 xfrpc.po
+mv xfrpc.po feeds/luci/applications/luci-app-xfrpc/po/zh_Hans/xfrpc.po
+
+# use geoip
+sed -i 's/geoip-only-cn-private.dat/geoip.dat/g' package/new/helloworld/v2ray-geodata/Makefile
+
+# disable docker option iptables
+sed -i "s/iptables '1'/iptables '0'/g" feeds/packages/utils/dockerd/files/etc/config/dockerd
+
+# distfeeds.conf settings
+sed -i 's#raw.cooluc.com/sbwml/kmod-x86_64/main#gh-proxy.com/https://raw.githubusercontent.com/sbwml/kmod-x86_64/main#g' package/new/default-settings/default/zzz-default-settings
 
 # Load devices Config
 if [ "$platform" = "x86_64" ]; then
