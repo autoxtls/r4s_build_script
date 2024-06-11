@@ -121,10 +121,10 @@ CONFIG_PACKAGE_luci-app-zerotier=y
 # CONFIG_PACKAGE_ariang-nginx is not set
 
 ### ImmortalWrt Proxy - nft
-# CONFIG_PACKAGE_luci-app-homeproxy is not set
+CONFIG_PACKAGE_luci-app-homeproxy=y
 
-### Jederproxy
-CONFIG_PACKAGE_luci-app-jederproxy=y
+### Clash
+CONFIG_PACKAGE_luci-app-simple-clash=y
 
 ### Passwall
 CONFIG_PACKAGE_luci-app-passwall=y
