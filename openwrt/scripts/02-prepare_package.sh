@@ -99,9 +99,7 @@ sed -i "s/ImmortalWrt/OpenWrt/g" package/new/homeproxy/po/zh_Hans/homeproxy.po
 sed -i "s/ImmortalWrt proxy/OpenWrt proxy/g" package/new/homeproxy/htdocs/luci-static/resources/view/homeproxy/{client.js,server.js}
 
 # openwrt-clash
-git clone https://$github/ttimasdf/luci-app-jederproxy package/feeds/luci/luci-app-jederproxy --depth=1
-git clone https://github.com/chandelures/openwrt-clash package/new/openwrt-clash
-git clone https://github.com/chandelures/luci-app-simple-clash package/new/luci-app-simple-clash
+git clone https://$github/randyho/luci-app-clash-lite package/feeds/luci/luci-app-clash-lite
 
 # alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
