@@ -123,8 +123,8 @@ CONFIG_PACKAGE_luci-app-zerotier=y
 ### ImmortalWrt Proxy - nft
 CONFIG_PACKAGE_luci-app-homeproxy=y
 
-### Clash
-CONFIG_PACKAGE_luci-app-clash-lite=y
+### Xray
+CONFIG_PACKAGE_luci-app-xray=y
 
 ### Passwall
 CONFIG_PACKAGE_luci-app-passwall=y
