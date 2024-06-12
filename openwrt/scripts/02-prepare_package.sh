@@ -98,8 +98,9 @@ git clone https://$github/immortalwrt/homeproxy package/new/homeproxy
 sed -i "s/ImmortalWrt/OpenWrt/g" package/new/homeproxy/po/zh_Hans/homeproxy.po
 sed -i "s/ImmortalWrt proxy/OpenWrt proxy/g" package/new/homeproxy/htdocs/luci-static/resources/view/homeproxy/{client.js,server.js}
 
-# openwrt-clash
-git clone https://$github/randyho/luci-app-clash-lite package/feeds/luci/luci-app-clash-lite
+# xray
+git clone https://$github/yichya/luci-app-xray package/new/luci-app-xray
+git clone https://$github/xiechangan123/luci-i18n-xray-zh-cn package/new/luci-i18n-xray-zh-cn
 
 # alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
