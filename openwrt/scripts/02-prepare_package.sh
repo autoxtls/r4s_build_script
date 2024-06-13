@@ -104,6 +104,8 @@ git clone https://$github/xiechangan123/luci-i18n-xray-zh-cn package/new/luci-i1
 
 # mihomo
 git clone https://$github/morytyann/OpenWrt-mihomo package/new/openwrt-mihomo
+mkdir -p package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run
+curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/Country.mmdb https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
 
 # alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
