@@ -127,9 +127,8 @@ CONFIG_PACKAGE_luci-app-homeproxy=y
 CONFIG_PACKAGE_luci-app-xray=y
 
 ### Mihomo
-CONFIG_PACKAGE_luci-app-simple-clash=y
-CONFIG_PACKAGE_clash=y
-CONFIG_PACKAGE_clash-dashboard=y
+CONFIG_PACKAGE_luci-app-mihomo=y
+CONFIG_PACKAGE_mihomo=y
 
 ### Passwall
 CONFIG_PACKAGE_luci-app-passwall=y
