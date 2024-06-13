@@ -103,8 +103,7 @@ git clone https://$github/yichya/luci-app-xray package/new/luci-app-xray
 git clone https://$github/xiechangan123/luci-i18n-xray-zh-cn package/new/luci-i18n-xray-zh-cn
 
 # mihomo
-git clone https://$github/autoxtls/openwrt-clash package/new/openwrt-clash
-git clone https://$github/chandelures/luci-app-simple-clash package/new/luci-app-simple-clash
+git clone https://$github/morytyann/OpenWrt-mihomo package/new/openwrt-mihomo
 
 # alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
