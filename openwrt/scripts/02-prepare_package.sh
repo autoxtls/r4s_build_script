@@ -106,6 +106,11 @@ curl -Lso metacubexd-gh-pages.tar.gz https://$github/MetaCubeX/metacubexd/archiv
 tar zxf metacubexd-gh-pages.tar.gz
 mv metacubexd-gh-pages package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui/metacubexd
 
+# bump geodata version
+rm -rf package/new/helloworld/v2ray-geodata
+git clone https://$github/sbwml/v2ray-geodata package/new/helloworld/v2ray-geodata
+sed -i 's#Loyalsoldier/geoip/releases/latest/download/geoip-only-cn-private.dat#MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat#g; s#Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat#MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat#g' package/new/helloworld/v2ray-geodata/Makefile
+
 # alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
 
