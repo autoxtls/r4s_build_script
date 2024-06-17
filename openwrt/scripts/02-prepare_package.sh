@@ -98,14 +98,13 @@ git clone https://$github/immortalwrt/homeproxy package/new/homeproxy
 sed -i "s/ImmortalWrt/OpenWrt/g" package/new/homeproxy/po/zh_Hans/homeproxy.po
 sed -i "s/ImmortalWrt proxy/OpenWrt proxy/g" package/new/homeproxy/htdocs/luci-static/resources/view/homeproxy/{client.js,server.js}
 
-# xray
-git clone https://$github/yichya/luci-app-xray package/new/luci-app-xray
-git clone https://$github/xiechangan123/luci-i18n-xray-zh-cn package/new/luci-i18n-xray-zh-cn
-
 # mihomo
-git clone https://$github/morytyann/OpenWrt-mihomo package/new/openwrt-mihomo
-mkdir -p package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run
-curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/Country.mmdb https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+git clone https://$github/pmkol/openwrt-mihomo package/new/openwrt-mihomo
+mkdir -p package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui
+curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/Country.mmdb https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+curl -Lso metacubexd-gh-pages.tar.gz https://$github/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.tar.gz
+tar zxf metacubexd-gh-pages.tar.gz
+mv metacubexd-gh-pages package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui/metacubexd
 
 # alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
