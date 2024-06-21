@@ -119,3 +119,6 @@ if [ "$platform" = "bcm53xx" ]; then
     # wsdd2
     sed -i '/Build\/Compile/iTARGET_CFLAGS += -Wno-error -Wno-int-conversion\n' feeds/packages/net/wsdd2/Makefile
 fi
+
+# change golang to amd64-v2 microarchitecture
+sed -i 's/GO_AMD64:=v1/GO_AMD64:=v3/g' feeds/packages/lang/golang/golang-values.mk
