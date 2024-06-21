@@ -192,3 +192,5 @@ git clone https://$github/sbwml/feeds_packages_utils_unzip feeds/packages/utils/
 
 # tcp-brutal
 git clone https://$github/sbwml/package_kernel_tcp-brutal package/kernel/tcp-brutal
+
+git clone https://$github/pmkol/openwrt-upx package/new/upx
